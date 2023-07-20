@@ -1,0 +1,1 @@
+sass --watch sass.scss:sass.css

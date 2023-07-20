@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="furniture">
+    <meta name="keywords" content="furniture, house, item">
+    <meta name="description" content="portfolio">
+    <link rel="stylesheet" href="css/sass.css">
+    <title>Furniture</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+
+<div class="courses">
+  <!-- {{ message }}<br>
+  <input type="text" v-model="message"> -->
+
+  <div class="shop-container">
+      <div class="row mx-0 grid">
+  
+        <div v-for="grocery in groceries" 
+            :class="{ 'col-xs-12 col-sm-6 col-md-6 col-lg-4 px-0 mx-0 grid-item': true, [grocery.product]: true }">
+          <div class="main-items">
+            <img :src="grocery.img" alt="">
+            <div class="line">
+              <p class="price">{{ grocery.price }}<br>{{grocery.name}}</p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/courses.js"></script>
+  </body>
+</html>

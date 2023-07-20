@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <meta name="author" content="furniture">
+    <meta name="keywords" content="furniture, house, item">
+    <meta name="description" content="portfolio">
+    <link rel="stylesheet" href="css/sass.css">
+    <title>Furniture</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+<nav class="primary-menu">
+  <h1 class="main-title1">furniture</h1>
+  <ul>
+    <a href="index.html"><li>shop</li></a>
+  </ul>
+  <div class="button-container">
+    <button type="button" name="button" class="discount-btn" data-filter=".sale">
+      On Sale</button>
+    <button type="button" name="button" class="newitems-btn" data-filter=".new">
+      New items</button>
+  </div>
+  <ul style="padding-left: 80px;">
+    <li data-filter="*">show all</button></li>
+    <li data-filter=".bed">bed</li>
+    <li data-filter=".couch">couch/sofa</li>
+    <li data-filter=".chair">chair</li>
+    <li data-filter=".desk">table/desk</li>
+  </ul>
+  <ul>
+    <a href="about.html"><li>About us</li></a>
+    <a href="contact.html"><li>Contact</li></a>
+  </ul>
+  <ul class="icons">
+    <a href=""><li class="twitter"></li></a>
+    <a href=""><li class="facebook"></li></a>
+    <a href=""><li class="instagram"></li></a>
+    <a href=""><li class="linkedin"></li></a>
+  </ul>
+</nav>
+
+<div class="sub-body">
+
+<div class="main-screen">
+  <div class="main-title2">
+    <p>
+      Lorem ipsum dolor<br>
+      sit amet consectetur adipisicing elit.
+    </p>
+
+  </div>
+</div>
+  
+
+<div class="shop-container">
+    <div class="row mx-0 grid">
+
+      <div 
+      v-for="product in products" 
+      :class="{ 'col-xs-12 col-sm-12 col-md-6 col-lg-4 px-0 mx-0 grid-item': true, [product.product]: true }">
+        <div class="main-items">
+          <img :src="product.img" alt="">
+          <div class="line">
+            <p class="price">{{ product.price }}<br>{{product.name}}</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+<div class="footer-container">
+  <div class="row">
+    <div class="col-12 col-lg-5 px-0">
+        <ul>
+            <a href=""><li class="footer-li">FAQ</li></a>
+            <a href=""><li class="footer-li">Privacy Policy</li></a>
+            <a href=""><li class="footer-li">Terms and conditions</li></a>
+        </ul>
+    </div>
+    <div class="col-12 col-lg-6 px-0">
+      <p class="footer-text"><b>Contact us</b><br>
+      Sydney, Australia, NSW 2000<br>
+      040123456789 / email@email.com<br>
+      Copyright &copy; 2019 All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+</div>  <!-- finish sub body -->
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/filter.js"></script>
+  </body>
+</html>

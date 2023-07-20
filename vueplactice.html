@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="author" content="furniture">
+    <meta name="keywords" content="furniture, house, item">
+    <meta name="description" content="portfolio">
+    <link rel="stylesheet" href="css/sass.css">
+    <title>Vue furniture</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <h1>Vue.js</h1>
+   
+<div id="app" class="poop img-container">
+    <div class="row">
+        <div class="col-12 col-md-6 img-container">
+            <img :src="image" alt="" class="img-style">
+        </div>
+        <div class="text-cont col-12 col-md-6">
+          <p class="text-style">{{ title }}</p>
+
+          <!-- v-if -->
+          <p v-if="inStockinventory > 10" class="text-style">In stock</p>
+          <p v-else-if="inStockinventory <= 10 && inStockinventory > 0" 
+             class="text-style blue">
+            Almost sold out</p>
+          <p v-else class="text-style red">Out of stock</p>
+          
+          <ul>
+            <li v-for="detail in details" class="list-item">
+              {{ detail }}
+            </li>
+          </ul>
+
+          <div class="text-style"
+              v-for="variant in variants"
+              :key="variant.variantId"
+              class="colorbox"
+              :style="{color: variant.variantColor}"
+              @mouseover="updateProduct(variant.variantImage)"
+              >
+            <p>{{ variant.variantTex }}</p>
+          </div>
+
+          <button type="button" name="button"
+                  v-on:click="addToCart"
+                  :disable="!inStockinventory"
+                  :class="{ disableButton: !inStockinventory }"
+                  class="addtocart">
+            Add to cart</button>
+
+            <div class="cart text-style">
+              <p>Cart({{cart}})</p>
+            <!-- <product :premium="premium"></product> -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript" src="js/info.js"></script>
+  </body>
+</html>
